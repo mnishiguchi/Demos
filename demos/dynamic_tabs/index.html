@@ -29,7 +29,7 @@
 
         <content-pane title="{{ content.title }}">
           <div class="container">
-            <h1>{{ content.title }}</h1>
+            <h2>{{ content.title }}</h1>
             <div ng-bind-html="content.body"></div>
           </div>
         </content-pane>
@@ -38,18 +38,16 @@
     </dynamic-tabs>
 
     <!-- Display JSON data with HTML strings -->
-    <section class="alert alert-info">
+    <section class="alert alert-success">
       <div class="container">
 
-        <div ng-repeat="content in app.contents track by $index">
-          <pre>{{ content }}</pre>
-        </div>
+        <pre>{{ app.contents | json }}</pre>
 
       </div>
     </section>
 
     <footer class="footer">
-      <small>&copy; 2015 Masatoshi Nishiguchi</small>
+      <small>&copy; 2016 Masatoshi Nishiguchi</small>
     </footer>
 
   </div><!-- /container -->

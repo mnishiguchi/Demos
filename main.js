@@ -54,7 +54,7 @@ $(document).ready( function() {
 
       var extendedWithUrls = _.map(demos, function(demo) {
 
-        var githubBaseUrl = "https://github.com/mnishiguchi/mnishiguchi.github.io/tree/master/demos/";
+        var githubBaseUrl = "https://github.com/mnishiguchi/JavaScript-Demos/tree/master/demos/";
 
         // Generate urls based on my convention and create an object with them.
         var urls = {

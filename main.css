@@ -27,7 +27,7 @@ table.table {
    Note: I defined logo because navbar-brand conflicts with toggler
  */
 
-nav a.logo {
+.logo {
   font-weight: bold;
   font-size: 2.0em;
   letter-spacing: -0.04em;

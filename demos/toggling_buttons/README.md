@@ -1,7 +1,8 @@
-# Mobile app store
-- A practice AngularJS app.
-- Based on [Code Academy](https://www.codecademy.com/en/courses/learn-angularjs)
+# Toggling buttons
+- Demonstrates simple interactive directives
+- Inspired by [Code Academy](https://www.codecademy.com/en/courses/learn-angularjs)
 
-## Some techniques involved
-- Customizing interactive directives
+## Defining interactive directives (2 ways)
+A. Using a controller
+B. Using a link function
 

@@ -1,41 +1,53 @@
 <!doctype html>
 
-<html ng-app="myApp"><!-- booud to myApp -->
+<html
+  ng-app="app"
+  ng-controller="MainController as main" >
+
   <head>
-    <!-- Include styles -->
-    <link href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css" rel="stylesheet" />
-    <link href='https://fonts.googleapis.com/css?family=Roboto:500,300,700,400' rel='stylesheet' type='text/css'>
-    <link href="css/main.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+
+    <title>Toggling buttons | Masatoshi Nishiguchi</title>
+
+    <!-- Load styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha256-xWeRKjzyg6bep9D1AsHzUPEWHbWMzlRc84Z0aG+tyms= sha512-mGIRU0bcPaVjr7BceESkC37zD6sEccxE+RJyQABbbKNe83Y68+PyPM5nrE1zvbQZkSHDCJEtnAcodbhlq2/EkQ==" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css" type='text/css' />
   </head>
 
-  <body ng-app="AppMarketApp">
-    <div class="header">
-      <div class="container">
-        <h1>App Market</h1>
-      </div>
-    </div>
+  <body>
+    <div class="container">
 
-    <div class="main" ng-controller="MainController">
-      <div class="container">
-         <div class="card" ng-repeat="app in apps">
-          <app-info info="app"></app-info>
-          <install-app></install-app>
+      <header>
+        <h1>App Market</h1>
+      </header>
+
+      <div class="main">
+        <div class="container">
+
+          <div
+            class="card"
+            ng-repeat="product in main.products" >
+
+            <product info="product"></product>
+
+            <install-button></install-button>
+
+            <div class="clearfix"></div>
+
+            <hello-button></hello-button>
+
+          </div>
+
         </div>
       </div>
-    </div>
 
-    <!-- Include AngularJS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.js"></script>
+    </div><!-- /.container -->
 
-    <!-- Modules -->
-    <script src="js/app.js"></script>
-
-    <!-- Controllers -->
-    <script src="js/controllers/MainController.js"></script>
-
-    <!-- Directives -->
-    <script src="js/directives/appInfo.js"></script>
-    <script src="js/directives/installApp.js"></script>
+    <!-- Load AngularJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular.min.js"></script>
+    <!-- Load app scripts -->
+    <script src="app.js"></script>
 
   </body>
 </html>

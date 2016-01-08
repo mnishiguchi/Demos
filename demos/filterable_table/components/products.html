@@ -54,10 +54,11 @@
 </table>
 
 <!-- Display filtered data -->
-<section class="alert alert-info">
+<h4>Filtered products</h4>
+<section class="alert alert-success">
   <div class="container">
 
-    <pre>{{ vm.categories }}</pre>
+    <pre>{{ vm.categories | json }}</pre>
 
   </div>
 </section>
