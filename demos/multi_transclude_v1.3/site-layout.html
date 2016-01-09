@@ -1,0 +1,43 @@
+<!--
+  siteLayout directive
+  - 1. Define static elements.
+  - 2. Insert multiple dynamic elements via transclusion.
+  --
+  NOTE: The transclude-id attributes indicate the destination elements.
+        A transclude text is required to be marked with transclude-to attribute.
+ -->
+
+<div class="site-layout--wrapper">
+
+  <!-- Dynamic element -->
+  <div class="site-layout--head" transclude-id="head"></div>
+  <div class="site-layout--menu" transclude-id="menu"></div>
+  <div class="site-layout--body" transclude-id="body"></div>
+
+  <!-- Static element -->
+  <footer class="site-layout--foot">
+    <p>&copy; 2016 Masatoshi Nishiguchi</p>
+  </footer>
+
+</div>
+
+<!-- Styles -->
+<style>
+  .site-layout--head {
+
+  }
+
+  .site-layout--menu {
+
+  }
+
+  .site-layout--body {
+    background: #bcd;
+    height: 300px;
+  }
+
+  .site-layout--foot {
+    background: #def;
+    height: 60px;
+  }
+</style>

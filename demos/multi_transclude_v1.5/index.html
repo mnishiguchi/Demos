@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html
+  lang="en-us"
+  ng-app="app"
+  ng-controller="AppController as app">
+
+<head>
+  <title>Multi-transclude v1.5 | Masatoshi Nishiguchi</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+
+  <!-- Load Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha256-xWeRKjzyg6bep9D1AsHzUPEWHbWMzlRc84Z0aG+tyms= sha512-mGIRU0bcPaVjr7BceESkC37zD6sEccxE+RJyQABbbKNe83Y68+PyPM5nrE1zvbQZkSHDCJEtnAcodbhlq2/EkQ==" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+
+    <site-layout>
+
+      <layout-head>
+        <!-- Navbar -->
+        <nav class="navbar navbar-dark bg-primary">
+          <a class="navbar-brand" href="#">Multi-transclude v1.5</a>
+        </nav>
+      </layout-head>
+
+      <layout-menu>
+        <nav class="navbar navbar-light bg-faded">
+          <div class="nav navbar-nav">
+            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="#">Features</a>
+            <a class="nav-item nav-link" href="#">Pricing</a>
+            <a class="nav-item nav-link" href="#">About</a>
+          </div>
+        </nav>
+      </layout-menu>
+
+      <layout-body>
+        This is transcluded into the body section of the site-layout directive.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus blanditiis dolor adipisci eum quos illo repudiandae doloribus velit neque! Voluptates ab est praesentium dignissimos, pariatur dolorem culpa quae enim harum.
+      </layout-body>
+
+    </site-layout>
+
+  </div><!-- /.container -->
+
+  <noscript>
+    <div class="nojs">Javascript is either disabled or not supported in your browser. Please enable it or use a Javascript enabled browser.</div>
+  </noscript>
+
+  <!-- Load Augular -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular.min.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>

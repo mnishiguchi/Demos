@@ -1,0 +1,44 @@
+<!--
+  siteLayout directive
+  - 1. Define static elements.
+  - 2. Insert multiple dynamic elements via transclusion.
+  --
+  NOTE: The ng-transclude attributes indicate the destination elements.
+        A transclude text is required to be marked with tags that correspond to
+        ng-transclude id.
+ -->
+
+<div class="site-layout--wrapper">
+
+  <!-- Dynamic element -->
+  <div class="site-layout--head" ng-transclude="layoutHead"></div>
+  <div class="site-layout--menu" ng-transclude="layoutMenu"></div>
+  <div class="site-layout--body" ng-transclude="layoutBody"></div>
+
+  <!-- Static element -->
+  <footer class="site-layout--foot">
+    <p>&copy; 2016 Masatoshi Nishiguchi</p>
+  </footer>
+
+</div>
+
+<!-- Styles -->
+<style>
+  .site-layout--head {
+
+  }
+
+  .site-layout--menu {
+
+  }
+
+  .site-layout--body {
+    background: #bcd;
+    height: 300px;
+  }
+
+  .site-layout--foot {
+    background: #def;
+    height: 60px;
+  }
+</style>

@@ -54,7 +54,7 @@ $(document).ready( function() {
 
       var extendedWithUrls = _.map(demos, function(demo) {
 
-        var githubBaseUrl = "https://github.com/mnishiguchi/JavaScript-Demos/tree/master/demos/";
+        var githubBaseUrl = "https://github.com/mnishiguchi/JavaScript-Demos/tree/gh-pages/demos/";
 
         // Generate urls based on my convention and create an object with them.
         var urls = {
@@ -102,7 +102,12 @@ $(document).ready( function() {
         desc: "",
       },
       {
-        name: "multi_transclude",
+        name: "multi_transclude_v1.3",
+        type: "Angular",
+        desc: "",
+      },
+      {
+        name: "multi_transclude_v1.5",
         type: "Angular",
         desc: "",
       },
