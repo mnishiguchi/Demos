@@ -117,6 +117,11 @@ $(document).ready( function() {
         desc: "",
       },
       {
+        name: "movie_search",
+        type: "Angular",
+        desc: "",
+      },
+      {
         name: "toggling_buttons",
         type: "Angular",
         desc: "",

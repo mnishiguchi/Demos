@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html
+  ng-app="app"
+  ng-controller="AppController as app" >
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+
+  <title>Movie search | Masatoshi Nishiguchi</title>
+
+  <!-- Load font awesome -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" >
+
+  <!-- Load Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha256-xWeRKjzyg6bep9D1AsHzUPEWHbWMzlRc84Z0aG+tyms= sha512-mGIRU0bcPaVjr7BceESkC37zD6sEccxE+RJyQABbbKNe83Y68+PyPM5nrE1zvbQZkSHDCJEtnAcodbhlq2/EkQ==" crossorigin="anonymous">
+
+  <style>
+    h1 {
+      padding: 20px;
+    }
+    .movie-poster {
+      padding: 20px 0;
+      height: auto;
+      width: 300px;
+    }
+    .no-info {
+      padding-top: 10px;
+      margin-left: 10px;
+      font-style: italic;
+    }
+    .alert {
+      height: 500px;
+      overflow: auto;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container" id="top">
+
+    <h1>
+      Movie search
+    </h1>
+    <p>
+      Coding too much is not a healthy life style. It is great to spend
+      fun time watching movies with my wife.
+      (Data provided by <a href="http://www.omdbapi.com/">the Open Movie Database</a>)
+    </p>
+
+    <!-- Movie search -->
+    <div class="card card-block">
+      <movie-search></movie-search>
+    </div><!-- end card -->
+
+  </div><!-- /.container -->
+
+  <!-- Load scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular.min.js"></script>
+  <script src="app.js"></script>
+  <script src="components/movieSearch.js"></script>
+  <script src="components/movieDataService.js"></script>
+  <script src="components/anchorHashLink.js"></script>
+
+</body>
+</html>
