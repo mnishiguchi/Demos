@@ -36,7 +36,7 @@ table.table {
   text-decoration: none;
 }
 
-nav a.logo:hover {
+.logo:hover {
   color: #3B5998;
   text-decoration: none;
 }
@@ -70,6 +70,8 @@ nav a.logo:hover {
   height: auto;
   width: 200px;
   text-align: center;
+  box-sizing: content-box;
+  border: 5px inset #BBBBBB;
 }
 
 .profile-picture > img.masa-chinatown {
@@ -112,6 +114,7 @@ nav a.logo:hover {
 
 .filter_field {
   margin-bottom: 10px;
+  border: 2px solid #BBBBBB;
 }
 
 footer {
@@ -152,8 +155,8 @@ footer li {
 
 
 @media (max-width: 34em) {
-  nav a.logo {
-    font-size: 1.1em;
+  .logo {
+    font-size: 1.2em;
   }
 
   footer{

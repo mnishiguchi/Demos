@@ -127,7 +127,7 @@ $(document).ready( function() {
         {
           name: "movie_search",
           type: "Angular",
-          desc: "Load movie info from the Open Movie Database API based on the title that the user enters",
+          desc: "Loading movie info from the Open Movie Database API based on the title that the user enters",
         },
         {
           name: "toggling_buttons",
@@ -143,6 +143,11 @@ $(document).ready( function() {
           name: "modal_dialog",
           type: "Angular, CSS, JS",
           desc: "Reusable modal dialog component to which we can pass in title, content text and optionally dimension",
+        },
+        {
+          name: "modal_dialog_2",
+          type: "Angular, CSS, JS",
+          desc: "Dealing with different types of dialogs in the same page",
         },
       ];
 

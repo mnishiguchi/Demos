@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html
+  ng-app="app"
+  ng-controller="AppController as app" >
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+
+  <title>Modal dialog | Masatoshi Nishiguchi</title>
+
+  <!-- Load Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha256-xWeRKjzyg6bep9D1AsHzUPEWHbWMzlRc84Z0aG+tyms= sha512-mGIRU0bcPaVjr7BceESkC37zD6sEccxE+RJyQABbbKNe83Y68+PyPM5nrE1zvbQZkSHDCJEtnAcodbhlq2/EkQ==" crossorigin="anonymous">
+  <link rel="stylesheet" href="components/modalDialog.css">
+  <style>
+    h1 {
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Modal dialog</h1>
+
+    <!-- Open/close the modal dialog. -->
+    <button ng-click='app.alertSomething()'>Alert dialog</button>
+    <button ng-click='app.confirmSomething()'>Confirm dialog</button>
+    <button ng-click='app.promptSomething()'>Prompt dialog</button>
+
+    <modal-dialog
+      ng-show="dialogType"
+      class="modal_dialog__overlay"
+      ng-switch="dialogType">
+
+      <!-- BEGIN: Alert Modal. -->
+      <div ng-switch-when="alert">
+        <span ng-include="'components/_alertModal.html'"></span>
+      </div>
+      <!-- END: Alert Modal. -->
+
+      <!-- BEGIN: Confirm Modal. -->
+      <div ng-switch-when="confirm">
+        <span ng-include="'components/_confirmModal.html'"></span>
+      </div>
+      <!-- END: Confirm Modal. -->
+
+      <!-- BEGIN: Prompt Modal. -->
+      <div ng-switch-when="prompt">
+        <span ng-include="'components/_promptModal.html'"></span>
+      </div>
+      <!-- END: Prompt Modal. -->
+
+    </modal-dialog>
+
+  </div><!-- /.container -->
+
+
+  <!-- Load scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular-animate.min.js"></script>
+  <script src="app.js"></script>
+  <script src="components/modalDialog.js"></script>
+  <script src="components/modalService.js"></script>
+
+</body>
+</html>
