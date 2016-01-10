@@ -139,6 +139,11 @@ $(document).ready( function() {
           type: "HTML/CSS/JS",
           desc: "",
         },
+        {
+          name: "modal_dialog",
+          type: "HTML/CSS/JS",
+          desc: "",
+        },
       ];
 
       return extendWithUrls( data );

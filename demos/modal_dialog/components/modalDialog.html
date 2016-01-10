@@ -1,0 +1,35 @@
+<div
+  class='modal_dialog'
+  ng-show='vm.show'>
+
+  <div
+    class='modal_dialog__overlay'
+    ng-click='vm.hideModal()'>
+  </div>
+
+  <section
+    class='modal_dialog__window'
+    ng-style='vm.dimension'>
+
+    <button type="button"
+      class='modal_dialog__close'
+      ng-click='vm.hideModal()'>
+      X
+    </button type="button">
+
+    <div class="container">
+
+      <h2
+        class='modal_dialog__title'
+        ng-transclude="dialogTitle">
+      </h2>
+
+      <p
+        class='modal_dialog__content'
+        ng-transclude="dialogContent">
+      </p>
+
+    </div>
+
+  </section>
+</div>

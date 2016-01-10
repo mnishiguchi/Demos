@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html
+  ng-app="app"
+  ng-controller="AppController as app" >
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+
+  <title>Modal dialog | Masatoshi Nishiguchi</title>
+
+  <!-- Load Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha256-xWeRKjzyg6bep9D1AsHzUPEWHbWMzlRc84Z0aG+tyms= sha512-mGIRU0bcPaVjr7BceESkC37zD6sEccxE+RJyQABbbKNe83Y68+PyPM5nrE1zvbQZkSHDCJEtnAcodbhlq2/EkQ==" crossorigin="anonymous">
+  <link rel="stylesheet" href="components/modalDialog.css">
+  <style>
+    h1 {
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>
+      Modal dialog
+    </h1>
+
+    <!-- Edit title that will be shown in the modal dialog. -->
+    <input type="text"
+      ng-model="app.dialogTitle"
+      name="dialogTitle" id="dialogTitle"
+      placeholder="Title">
+    <div class="clearfix"></div>
+
+    <!-- Edit content text that will be shown in the modal dialog. -->
+    <textarea
+      ng-model="app.dialogContent"
+      name="dialogContent" id="dialogContent"
+      placeholder="Content">
+    </textarea>
+    <div class="clearfix"></div>
+
+    <!-- Open/close the modal dialog. -->
+    <button ng-click='app.toggleModal()'>
+      Open Dialog
+    </button>
+
+    <!-- The content will be transcluded into modalDialog component -->
+    <modal-dialog show='app.isModalShown'>
+
+      <dialog-title
+        ng-bind="app.dialogTitle">
+      </dialog-title>
+
+      <dialog-content
+        ng-bind="app.dialogContent">
+      </dialog-content>
+
+    </modal-dialog>
+
+  </div><!-- /.container -->
+
+  <!-- Load scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular.min.js"></script>
+  <script src="app.js"></script>
+  <script src="components/modalDialog.js"></script>
+
+</body>
+</html>

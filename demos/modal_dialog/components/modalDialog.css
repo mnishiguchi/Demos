@@ -1,0 +1,67 @@
+/* Taken from
+- http://adamalbrecht.com/2013/12/12/creating-a-simple-modal-dialog-directive-in-angular-js/
+- http://jsfiddle.net/kumarmuthaliar/GG9Sa/1/
+*/
+
+.modal_dialog__overlay {
+  /* A dark translucent div that covers the whole screen */
+  position:absolute;
+  z-index:9999;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color:#000000;
+  opacity: 0.8;
+}
+
+.modal_dialog__window {
+  /* A centered div above the overlay with a box shadow. */
+  z-index:10000;
+  position: absolute;
+  width: 50%; /* Default */
+  max-height: 300px;
+  overflow: auto;
+
+  /* Center the dialog */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+
+  background-color: #fff;
+  box-shadow: 4px 4px 80px #000;
+
+  padding: 10px 20px 10px 20px;
+  border-radius: 10px;
+  background: #fff;
+  background: -moz-linear-gradient(#fff, #999);
+  background: -webkit-linear-gradient(#fff, #999);
+  background: -o-linear-gradient(#fff, #999);
+}
+
+.modal_dialog__title {
+  padding: 10px 0 5px 0;
+}
+
+.modal_dialog__content {
+  text-align: justify;
+  overflow: auto;
+}
+
+.modal_dialog__close {
+  position: absolute;
+  top: 3px;
+  right: 5px;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 120%;
+  display: inline-block;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.modal_dialog__close:hover {
+  color: #00d9ff;
+}
