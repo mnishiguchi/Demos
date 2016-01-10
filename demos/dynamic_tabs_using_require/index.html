@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html
+  lang="en-us"
+  ng-app="app"
+  ng-controller="AppController as app">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+
+  <title>
+    Dynamic tabs | Masatoshi Nishiguchi
+  </title>
+
+  <!-- Load styles -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha256-xWeRKjzyg6bep9D1AsHzUPEWHbWMzlRc84Z0aG+tyms= sha512-mGIRU0bcPaVjr7BceESkC37zD6sEccxE+RJyQABbbKNe83Y68+PyPM5nrE1zvbQZkSHDCJEtnAcodbhlq2/EkQ==" crossorigin="anonymous">
+  <style>
+    h1 {
+      padding: 20px;
+    }
+    .container {
+      padding-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <h1>Dynamic tabs</h1>
+
+    <dynamic-tabs>
+      <div ng-repeat="each in app.contents track by $index">
+
+        <tab label="{{ each.label }}">
+          <div class="container">
+            <h2>
+              <a
+                ng-href="{{ each.url }}"
+                target="_blank"
+                ng-bind="each.label">
+              </a>
+            </h2>
+            <div ng-bind-html="each.body"></div>
+          </div>
+        </tab>
+
+      </div>
+    </dynamic-tabs>
+
+    <!-- Display JSON data -->
+    <section class="alert alert-success">
+      <div class="container">
+        <pre>{{ app.contents | json }}</pre>
+      </div>
+    </section>
+
+  </div><!-- /container -->
+
+  <noscript>
+    <div class="nojs">
+      Javascript is either disabled or not supported in your browser.
+      Please enable it or use a Javascript enabled browser.
+    </div>
+  </noscript>
+
+  <!-- Load jQuery then AngularJS
+    NOTE: Always read jQuery before AngularJS
+  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular-sanitize.min.js"></script>
+
+  <!-- Load app scripts -->
+  <script src="app.js"></script>
+  <script src="dynamicTabs.js"></script>
+
+</body>
+</html>

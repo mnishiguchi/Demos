@@ -1,0 +1,29 @@
+<!--
+  dynamicTabs
+  --
+  NOTE: The tab directive is required as a child, which requires a label property.
+-->
+
+<div class="dynamic_tabs">
+
+  <div class="card card-block">
+    <ul class="nav nav-tabs">
+      <li
+        ng-repeat="tab in vm.tabs"
+        ng-class="{ active : tab.selected }"
+        class="nav-item">
+        <a
+          ng-click="vm.setSelected( tab )"
+          class="nav-link"
+          href="">
+          {{ tab.label }}  <!-- label is provided through tab directive -->
+        </a>
+      </li>
+    </ul>
+
+    <!-- Selected content will be transcluded here. -->
+    <ng-transclude></ng-transclude>
+
+  </div><!-- /card -->
+
+</div><!-- /dynamic_tabs -->

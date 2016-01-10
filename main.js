@@ -112,7 +112,12 @@ $(document).ready( function() {
         desc: "",
       },
       {
-        name: "dynamic_tabs",
+        name: "dynamic_tabs_using_require",
+        type: "Angular",
+        desc: "",
+      },
+      {
+        name: "dynamic_tabs_emitting_event",
         type: "Angular",
         desc: "",
       },
