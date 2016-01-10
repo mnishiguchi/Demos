@@ -1,130 +1,129 @@
 <!DOCTYPE html>
+
 <html
   lang="en"
   ng-app="app"
   ng-controller="AppController as app">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <meta name="description" content="Masatoshi Nishiguchi's demos">
-    <meta name="keywords" content="Programming, Coding, JavaScript, Angular, Ruby on Rails">
-    <meta name="author" content="Masatoshi Nishiguchi">
+  <meta name="description" content="Masatoshi Nishiguchi's demos">
+  <meta name="keywords" content="Programming, Coding, JavaScript, Angular, Ruby on Rails">
+  <meta name="author" content="Masatoshi Nishiguchi">
 
-    <title>Demos | Masatoshi Nishiguchi</title>
+  <title>Demos | Masatoshi Nishiguchi</title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
-    <!-- Custom styles -->
-    <link rel="stylesheet" href="main.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="main.css">
 
-    <!-- Load jQuery first, then Bootstrap JS. -->
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- Load lodash -->
-    <script src="node_modules/lodash/index.js"></script>
-    <!-- Load Angular -->
-    <script src="node_modules/angular/angular.min.js"></script>
-    <!-- Load app's sctipts -->
-    <script src="main.js"></script>
-  </head>
+  <!-- Load jQuery first, then Bootstrap JS. -->
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- Load lodash -->
+  <script src="node_modules/lodash/index.js"></script>
+  <!-- Load Angular -->
+  <script src="node_modules/angular/angular.min.js"></script>
+  <!-- Load app's sctipts -->
+  <script src="main.js"></script>
+</head>
 
-  <body>
-    <div class="container">
+<body>
+  <div class="container">
 
-      <!-- Site header -->
-      <header>
-        <!-- Collapsed content -->
-        <div class="collapse" id="collapsed-content">
+    <!-- Site header -->
+    <header>
+      <!-- Collapsed content -->
+      <!-- <div class="collapse" id="collapsed-content"></div> -->
 
-          <!-- currently empty -->
-
+      <!-- Navbar -->
+      <nav class="navbar">
+        <!-- Hamburger button -->
+        <div class="navbar-brand toggler-wrapper">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsed-content">
+            &#9776;
+          </button>
         </div>
 
-        <!-- Navbar -->
-        <nav class="navbar">
-          <!-- Hamburger button -->
-          <div class="navbar-brand toggler-wrapper">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsed-content">
-              &#9776;
-            </button>
-          </div>
+        <!-- Logo -->
+        <h1 class="logo">JavaScript Demos</h1>
+    </header>
 
-          <!-- Logo -->
-          <h1 class="logo">JavaScript Demos</h1>
 
-      </header>
+    <div class="row">
 
-      <div class="row">
+      <!-- Picture -->
+      <div class="col-md-3">
+        <figure class="profile-picture">
+          <a href="https://github.com/mnishiguchi">
+            <img class="masa-chinatown" src="https://avatars1.githubusercontent.com/u/7563926?v=3&s=200" alt="masatoshi">
+          </a>
+          <span class="flashing left"><i class="fa fa-heart"></i></span>
+          <span class="flashing right"><i class="fa fa-heart"></i></span>
+          <figcaption><span>Programmer</span></figcaption>
+        </figure>
+      </div>
 
-        <!-- Picture -->
-        <div class="col-md-3">
-          <figure class="profile-picture">
-            <a href="https://github.com/mnishiguchi">
-              <img class="masa-chinatown" src="https://avatars1.githubusercontent.com/u/7563926?v=3&s=200" alt="masatoshi">
-            </a>
-            <span class="flashing left"><i class="fa fa-heart"></i></span>
-            <span class="flashing right"><i class="fa fa-heart"></i></span>
-            <figcaption><span>Programmer</span></figcaption>
-          </figure>
-        </div>
+      <div class="col-md-9">
+
+        <!-- Filter -->
+        <input type="text"
+          ng-model="key"
+          ng-change="app.filterData( key )"
+          placeholder="Filter"
+          class="form-control filter_field">
 
         <!-- Table: Demos -->
-        <div class="col-md-9">
+        <table class="table table-bordered table-striped">
+          <tbody>
+            <tr ng-repeat="demo in app.filtered track by $index">
+              <td>
+                <a ng-href="{{ demo.demoUrl }}">
+                  <b><span ng-bind="demo.name"></span></b>
+                </a>
+              </td>
+              <td ng-bind="demo.type"></td>
+              <td ng-bind="demo.desc"></td>
+              <td>
+                <a ng-href="{{ demo.githubUrl }}">
+                  <i class="fa fa-github-alt"></i>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-          <table class="table table-bordered table-striped">
-            <tbody>
-              <tr ng-repeat="demo in app.demos track by $index">
-                <td>
-                  <a ng-href="{{ demo.demoUrl }}">
-                    <b>{{ demo.name }}</b>
-                  </a>
-                </td>
-                <td>
-                  {{ demo.type }}
-                </td>
-                <td>
-                  {{ demo.desc }}
-                </td>
-                <td>
-                  <a ng-href="{{ demo.githubUrl }}">
-                    <i class="fa fa-github-alt"></i>
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+      </div><!-- /col -->
 
-        </div><!-- /col -->
-
-      </div> <!-- /row -->
+    </div><!-- /row -->
 
 
-      <footer>
-        <p class="pull-left">&copy; 2016 Masatoshi Nishiguchi</p>
+    <footer>
+      <p class="pull-left">&copy; 2016 Masatoshi Nishiguchi</p>
 
-        <!-- Nav links -->
-        <ul class="pull-right">
-          <li>
-            <a href="https://twitter.com/MNishiguchiDC" target="_blank" data-toggle="tooltip" title="Twitter"><i class="fa fa-twitter"></i></a>
-          </li>
-          <li>
-            <a href="https://github.com/mnishiguchi" target="_blank" data-toggle="tooltip" title="Github"><i class="fa fa-github-alt"></i></a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/mnishiguchi" target="_blank" data-toggle="tooltip" title="Linkedin"><i class="fa fa-linkedin"></i></a>
-          </li>
-          <li>
-            <a href="mailto:masatoshi.nishiguchi@udc.edu?Subject=Contact%20from%20http://mnishiguchi.github.io/" data-toggle="tooltip" title="Email"><i class="fa fa-envelope-o"></i></a>
-          </li>
-        </ul>
-      </footer>
+      <!-- Nav links -->
+      <ul class="pull-right">
+        <li>
+          <a href="https://twitter.com/MNishiguchiDC" target="_blank" data-toggle="tooltip" title="Twitter"><i class="fa fa-twitter"></i></a>
+        </li>
+        <li>
+          <a href="https://github.com/mnishiguchi" target="_blank" data-toggle="tooltip" title="Github"><i class="fa fa-github-alt"></i></a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/mnishiguchi" target="_blank" data-toggle="tooltip" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+        </li>
+        <li>
+          <a href="mailto:masatoshi.nishiguchi@udc.edu?Subject=Contact%20from%20http://mnishiguchi.github.io/" data-toggle="tooltip" title="Email"><i class="fa fa-envelope-o"></i></a>
+        </li>
+      </ul>
+    </footer>
 
-    </div> <!-- /container -->
-
-  </body>
+  </div> <!-- /container -->
+</body>
 </html>

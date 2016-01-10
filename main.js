@@ -33,24 +33,125 @@ $(document).ready( function() {
     .module( "app" )
     .controller( "AppController", AppController );
 
-  AppController.$inject = [ ];
-  function AppController() {
+  AppController.$inject = [
+    "$filter",
+    "DemoData"
+  ];
+  function AppController( $filter, DemoData ) {
 
     vm = this;
 
     // Initial state.
-    vm.demos = [];
+    vm.demos    = [];
+    vm.filtered = [];
+
+    // Expose public methods.
+    vm.filterData = filterData;
 
     // Load demo data.
-    vm.demos = loadDemoData( demos );
+    vm.demos = DemoData.get();
+
+    // Assign demos to filtered.
+    vm.filtered = vm.demos;
 
 
     /**
-     * Load JSON array of demos, generate demoUrl and githubUrl for each demo
-     * based on my convention, and add each demo data the generated urls.
+     * Filter the demo data based on the specified keyword.
+     * @param  key A filter key.
+     */
+    function filterData( key ) {
+
+      var filtered = $filter( "filter" )( vm.demos, key );
+      vm.filtered  = filtered;
+
+    }
+
+  } // end AppController
+
+
+  // --------------------------------------------------------------------- //
+  // --------------------------------------------------------------------- //
+
+
+  angular
+    .module( "app" )
+    .factory( "DemoData", DemoData );
+
+  function DemoData() {
+
+    return { get: get };
+
+    function get() {
+
+      var data = [
+        {
+          name: "binding_events",
+          type: "Angular",
+          desc: "",
+        },
+        {
+          name: "bookstore",
+          type: "Angular",
+          desc: "",
+        },
+        {
+          name: "filterable_table",
+          type: "Angular",
+          desc: "",
+        },
+        {
+          name: "gemstore",
+          type: "Angular",
+          desc: "",
+        },
+        {
+          name: "multi_transclude_v1.3",
+          type: "Angular",
+          desc: "",
+        },
+        {
+          name: "multi_transclude_v1.5",
+          type: "Angular",
+          desc: "",
+        },
+        {
+          name: "dynamic_tabs_using_require",
+          type: "Angular",
+          desc: "",
+        },
+        {
+          name: "dynamic_tabs_emitting_event",
+          type: "Angular",
+          desc: "",
+        },
+        {
+          name: "movie_search",
+          type: "Angular",
+          desc: "",
+        },
+        {
+          name: "toggling_buttons",
+          type: "Angular",
+          desc: "",
+        },
+        {
+          name: "list_slider",
+          type: "HTML/CSS/JS",
+          desc: "",
+        },
+      ];
+
+      return extendWithUrls( data );
+
+    } // end get
+
+
+    /**
+     * Generate demoUrl and githubUrl for each demo based on my convention, and
+     * add each demo data the generated urls.
      * @param demos A JSON array of demo info.
      */
-    function loadDemoData( demos ) {
+    function extendWithUrls( demos ) {
 
       var extendedWithUrls = _.map(demos, function(demo) {
 
@@ -63,79 +164,13 @@ $(document).ready( function() {
         }
 
         // Extend each demo object with urls.
-        return _.extend({}, demo, urls);
+        return _.extend( {}, demo, urls );
 
       });
 
       return extendedWithUrls;
 
-    } // loadDemoData
-
-  } // end AppController
-
-
-  // ---
-  // DEMO DATA
-  // - Here we register demos to be displayed in the list.
-  // ---
-
-
-  var demos = [
-      {
-        name: "binding_events",
-        type: "Angular",
-        desc: "",
-      },
-      {
-        name: "bookstore",
-        type: "Angular",
-        desc: "",
-      },
-      {
-        name: "filterable_table",
-        type: "Angular",
-        desc: "",
-      },
-      {
-        name: "gemstore",
-        type: "Angular",
-        desc: "",
-      },
-      {
-        name: "multi_transclude_v1.3",
-        type: "Angular",
-        desc: "",
-      },
-      {
-        name: "multi_transclude_v1.5",
-        type: "Angular",
-        desc: "",
-      },
-      {
-        name: "dynamic_tabs_using_require",
-        type: "Angular",
-        desc: "",
-      },
-      {
-        name: "dynamic_tabs_emitting_event",
-        type: "Angular",
-        desc: "",
-      },
-      {
-        name: "movie_search",
-        type: "Angular",
-        desc: "",
-      },
-      {
-        name: "toggling_buttons",
-        type: "Angular",
-        desc: "",
-      },
-      {
-        name: "list_slider",
-        type: "HTML/CSS/JS",
-        desc: "",
-      },
-    ];
+    } // extendWithUrls
+  }
 
 })(); // end module
