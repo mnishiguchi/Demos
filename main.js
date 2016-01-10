@@ -5,7 +5,7 @@ $(document).ready( function() {
 
   // Blinking eyes
   setInterval(function() {
-      $('.flashing').fadeOut(1000).fadeIn(1000);
+    $('.flashing').fadeOut(1000).fadeIn(1000);
   }, 2000);
 
 });
@@ -87,7 +87,7 @@ $(document).ready( function() {
         {
           name: "binding_events",
           type: "Angular",
-          desc: "",
+          desc: "Binding clicking event to a component",
         },
         {
           name: "bookstore",
@@ -97,7 +97,7 @@ $(document).ready( function() {
         {
           name: "filterable_table",
           type: "Angular",
-          desc: "",
+          desc: "Customizing a table filtering",
         },
         {
           name: "gemstore",
@@ -107,46 +107,50 @@ $(document).ready( function() {
         {
           name: "multi_transclude_v1.3",
           type: "Angular",
-          desc: "",
+          desc: "Multi-transclude with a custom transclude functon for pre-1.5.*",
         },
         {
           name: "multi_transclude_v1.5",
           type: "Angular",
-          desc: "",
+          desc: "Taking advantage of Angular-v1.5's Multi-slot transclusion.",
         },
         {
           name: "dynamic_tabs_using_require",
           type: "Angular",
-          desc: "",
+          desc: "Communication between components by a child accessing its parent scope using require",
         },
         {
           name: "dynamic_tabs_emitting_event",
           type: "Angular",
-          desc: "",
+          desc: "Communication between components through events",
         },
         {
           name: "movie_search",
           type: "Angular",
-          desc: "",
+          desc: "Load movie info from the Open Movie Database API based on the title that the user enters",
         },
         {
           name: "toggling_buttons",
           type: "Angular",
-          desc: "",
+          desc: "Responding to button clicks",
         },
         {
           name: "list_slider",
-          type: "HTML/CSS/JS",
-          desc: "",
+          type: "HTML, CSS, JS",
+          desc: "When an list item is clicked, the description slides up",
         },
         {
           name: "modal_dialog",
-          type: "HTML/CSS/JS",
-          desc: "",
+          type: "Angular, CSS, JS",
+          desc: "Reusable modal dialog component to which we can pass in title, content text and optionally dimension",
         },
       ];
 
-      return extendWithUrls( data );
+      // Generate urls.
+      data = extendWithUrls( data );
+
+      // Sort by name and return data.
+      return data.sort( function( a, b ) { return a.name.localeCompare( b.name ); });
 
     } // end get
 
