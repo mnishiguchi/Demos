@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html
+  ng-app="app"
+  ng-controller="AppController as app" >
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+
+  <title>Modal dialog | Masatoshi Nishiguchi</title>
+
+  <!-- Load Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha256-xWeRKjzyg6bep9D1AsHzUPEWHbWMzlRc84Z0aG+tyms= sha512-mGIRU0bcPaVjr7BceESkC37zD6sEccxE+RJyQABbbKNe83Y68+PyPM5nrE1zvbQZkSHDCJEtnAcodbhlq2/EkQ==" crossorigin="anonymous">
+  <link rel="stylesheet" href="components/modalDialog.css">
+  <style>
+    h1 {
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Modal dialog</h1>
+
+    <!-- Open/close the modal dialog. -->
+    <button ng-click='app.alertSomething()'>Alert dialog</button>
+    <button ng-click='app.confirmSomething()'>Confirm dialog</button>
+    <button ng-click='app.promptSomething()'>Prompt dialog</button>
+
+    <modal-dialog
+      ng-show="dialogType"
+      class="modal_dialog__overlay"
+      ng-switch="dialogType">
+
+      <!-- BEGIN: Alert Modal. -->
+      <div ng-switch-when="alert">
+        <div
+          ng-controller="AlertModalController as alertModal"
+          class="modal_dialog__window">
+
+          <p>{{ alertModal.message }}</p>
+
+          <p>
+            <a
+              ng-click="alertModal.close()">
+              Ok, I got it!
+            </a>
+          </p>
+
+          <!-- This is to demonstrate that we can jump from one modal to another. -->
+          <p>
+            <a
+              ng-click="alertModal.jumpToConfirm()"
+              class="jump">
+              Jump over to the confirm modal</a>
+          </p>
+
+        </div>
+      </div>
+      <!-- END: Alert Modal. -->
+
+      <!-- BEGIN: Confirm Modal. -->
+      <div ng-switch-when="confirm">
+        <div
+          ng-controller="ConfirmModalController as confirmModal"
+          class="modal_dialog__window">
+
+          <p>{{ confirmModal.message }}</p>
+
+          <p>
+            <a ng-click="confirmModal.confirm()">
+              {{ confirmModal.confirmButton }}
+            </a>
+            &mdash;
+            <a ng-click="confirmModal.deny()">
+              {{ confirmModal.denyButton }}
+            </a>
+          </p>
+
+        </div>
+      </div>
+      <!-- END: Confirm Modal. -->
+
+      <!-- BEGIN: Prompt Modal. -->
+      <div ng-switch-when="prompt">
+        <form
+          ng-controller="PromptModalController as promptModal"
+          ng-submit="promptModal.submit()"
+          class="modal_dialog__window" >
+
+          <p>{{ promptModal.message }}</p>
+
+          <p ng-if="promptModal.errorMessage">
+            <strong>Sorry:</strong>
+            <span>{{ promptModal.errorMessage }}</span>
+          </p>
+
+          <p>
+            <input type="text" ng-model="promptModal.form.input" />
+          </p>
+
+          <p>
+            <a ng-click="promptModal.submit()">Submit</a>
+            &mdash;
+            <a ng-click="promptModal.cancel()">Cancel</a>
+          </p>
+
+        </form>
+      </div>
+      <!-- END: Prompt Modal. -->
+
+    </modal-dialog>
+
+  </div><!-- /.container -->
+
+
+  <!-- Load scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular-animate.min.js"></script>
+  <script src="app.js"></script>
+  <script src="components/modalDialog.js"></script>
+  <script src="components/modalService.js"></script>
+
+</body>
+</html>

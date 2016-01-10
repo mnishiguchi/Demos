@@ -53,7 +53,7 @@
       (function() {
 
         // Module declaraton.
-        var app = angular.module("app", [ ]);
+        var app = angular.module( "app", [ ] );
 
 
         // --------------------------------------------------------------------- //
@@ -67,7 +67,7 @@
         /**
          * Respond to mouseenter event.
          */
-        app.directive( "respondToMouseenter", respondToMouseenter);
+        app.directive( "respondToMouseenter", respondToMouseenter );
 
         function respondToMouseenter() {
 
@@ -76,7 +76,7 @@
           function link( scope, element ) {
             element.bind( "mouseenter", function() {
 
-              element.children( ':first' ).html( "Welcome in!" );
+              element.children( ':first' ).html( "Welcome!" );
               element.css( "background-color", "#ff70ca" );
             })
           }
@@ -95,7 +95,7 @@
           function link( scope, element ) {
             element.bind( "mouseleave", function() {
 
-              element.children( ':first' ).html( "I am leaving!" );
+              element.children( ':first' ).html( "Good-bye!" );
               element.css( "background-color", "#caff70" );
             })
           }
