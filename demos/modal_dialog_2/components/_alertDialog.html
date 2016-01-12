@@ -1,0 +1,18 @@
+<div class="modal_dialog__window">
+
+  <p>{{ alertDialog.message }}</p>
+
+  <p>
+    <a ng-click="alertDialog.close()">
+      Ok, I got it!
+    </a>
+  </p>
+
+  <!-- This is to demonstrate that we can jump from one modal to another. -->
+  <p>
+    <a ng-click="alertDialog.jumpToConfirm()" class="jump">
+      Jump over to the confirm modal
+    </a>
+  </p>
+
+</div>

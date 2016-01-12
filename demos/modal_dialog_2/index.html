@@ -36,82 +36,17 @@
       class="modal_dialog__overlay"
       ng-switch="dialogType">
 
-      <!-- BEGIN: Alert Modal. -->
       <div ng-switch-when="alert">
-        <div
-          ng-controller="AlertModalController as alertModal"
-          class="modal_dialog__window">
-
-          <p>{{ alertModal.message }}</p>
-
-          <p>
-            <a
-              ng-click="alertModal.close()">
-              Ok, I got it!
-            </a>
-          </p>
-
-          <!-- This is to demonstrate that we can jump from one modal to another. -->
-          <p>
-            <a
-              ng-click="alertModal.jumpToConfirm()"
-              class="jump">
-              Jump over to the confirm modal</a>
-          </p>
-
-        </div>
+        <alert-dialog></alert-dialog>
       </div>
-      <!-- END: Alert Modal. -->
 
-      <!-- BEGIN: Confirm Modal. -->
       <div ng-switch-when="confirm">
-        <div
-          ng-controller="ConfirmModalController as confirmModal"
-          class="modal_dialog__window">
-
-          <p>{{ confirmModal.message }}</p>
-
-          <p>
-            <a ng-click="confirmModal.confirm()">
-              {{ confirmModal.confirmButton }}
-            </a>
-            &mdash;
-            <a ng-click="confirmModal.deny()">
-              {{ confirmModal.denyButton }}
-            </a>
-          </p>
-
-        </div>
+        <confirm-dialog></confirm-dialog>
       </div>
-      <!-- END: Confirm Modal. -->
 
-      <!-- BEGIN: Prompt Modal. -->
       <div ng-switch-when="prompt">
-        <form
-          ng-controller="PromptModalController as promptModal"
-          ng-submit="promptModal.submit()"
-          class="modal_dialog__window" >
-
-          <p>{{ promptModal.message }}</p>
-
-          <p ng-if="promptModal.errorMessage">
-            <strong>Sorry:</strong>
-            <span>{{ promptModal.errorMessage }}</span>
-          </p>
-
-          <p>
-            <input type="text" ng-model="promptModal.form.input" />
-          </p>
-
-          <p>
-            <a ng-click="promptModal.submit()">Submit</a>
-            &mdash;
-            <a ng-click="promptModal.cancel()">Cancel</a>
-          </p>
-
-        </form>
+        <prompt-dialog></prompt-dialog>
       </div>
-      <!-- END: Prompt Modal. -->
 
     </modal-dialog>
 
@@ -124,6 +59,9 @@
   <script src="app.js"></script>
   <script src="components/modalDialog.js"></script>
   <script src="components/modalService.js"></script>
+  <script src="components/_alertDialog.js"></script>
+  <script src="components/_confirmDialog.js"></script>
+  <script src="components/_promptDialog.js"></script>
 
 </body>
 </html>
