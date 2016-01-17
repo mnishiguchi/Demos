@@ -149,6 +149,11 @@ $(document).ready( function() {
           type: "Angular, CSS, JS",
           desc: "Dealing with different types of dialogs in the same page",
         },
+        {
+          name: "hexagonal_grid",
+          type: "Angular, CSS, JS",
+          desc: "Responsive hexagonal grid layout with hover animation",
+        },
       ];
 
       // Generate urls.
