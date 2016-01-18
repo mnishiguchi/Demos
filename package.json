@@ -1,21 +1,18 @@
 {
-  "name": "mnishiguchi.github.io",
+  "name": "JavaScript-Demos",
   "version": "1.0.0",
-  "description": "## Resources - [my notebook](https://github.com/mnishiguchi/html_practice_code/tree/master/_notebook) - http://v4-alpha.getbootstrap.com/components/buttons/",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mnishiguchi/mnishiguchi.github.io"
+    "url": "https://github.com/mnishiguchi/JavaScript-Demos"
   },
   "author": "Masatoshi Nishiguchi",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/mnishiguchi/mnishiguchi.github.io/issues"
-  },
-  "homepage": "https://github.com/mnishiguchi/mnishiguchi.github.io",
+  "homepage": "https://github.com/mnishiguchi/JavaScript-Demos",
   "dependencies": {
     "angular": "^1.5.0-rc.0",
     "bootstrap": "^4.0.0-alpha.2",
@@ -26,9 +23,16 @@
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
+    "gulp-jshint": "^2.0.0",
     "gulp-minify-css": "^1.2.3",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^1.5.1",
-    "gulp-webserver": "^0.9.1"
+    "gulp-util": "^3.0.7",
+    "gulp-webserver": "^0.9.1",
+    "jshint": "^2.9.1",
+    "jshint-stylish": "^2.1.0"
+  },
+  "bugs": {
+    "url": "https://github.com/mnishiguchi/JavaScript-Demos/issues"
   }
 }

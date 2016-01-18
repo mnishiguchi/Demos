@@ -1,23 +1,3 @@
-/**
- * Get icons blinking.
- */
-$(document).ready( function() {
-
-  // Blinking eyes
-  setInterval(function() {
-    $('.flashing').fadeOut(1000).fadeIn(1000);
-  }, 2000);
-
-});
-
-
-// ----------------------------------------------------------------------- //
-// ----------------------------------------------------------------------- //
-
-
-/**
- * The main Augular module for this website.
- */
 (function() {
 
   // Module declaration.
@@ -92,7 +72,7 @@ $(document).ready( function() {
         {
           name: "bookstore",
           type: "Angular",
-          desc: "",
+          desc: "A practice app",
         },
         {
           name: "filterable_table",
@@ -102,7 +82,7 @@ $(document).ready( function() {
         {
           name: "gemstore",
           type: "Angular",
-          desc: "",
+          desc: "A practice app",
         },
         {
           name: "multi_transclude_v1.3",
@@ -141,18 +121,23 @@ $(document).ready( function() {
         },
         {
           name: "modal_dialog",
-          type: "Angular, CSS, JS",
+          type: "Angular, CSS",
           desc: "Reusable modal dialog component to which we can pass in title, content text and optionally dimension",
         },
         {
           name: "modal_dialog_2",
-          type: "Angular, CSS, JS",
+          type: "Angular, CSS",
           desc: "Dealing with different types of dialogs in the same page",
         },
         {
           name: "hexagonal_grid",
-          type: "Angular, CSS, JS",
+          type: "CSS",
           desc: "Responsive hexagonal grid layout with hover animation",
+        },
+        {
+          name: "evenly_distributed_dots",
+          type: "Angular",
+          desc: "Dynamically adjust the grid so that the dots are evenly distributed",
         },
       ];
 

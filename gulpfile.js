@@ -1,3 +1,5 @@
+"use strict";
+
 /**
  * Defines Gulp tasks for this project.
  * https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md
@@ -7,14 +9,17 @@ var minJs  = require( "gulp-uglify" );
 var minCss = require( 'gulp-minify-css' );
 var rename = require( "gulp-rename" );
 // var concat = require( "gulp-concat" );
+var gulpUtil = require('gulp-util');
 
+  // gulpUtil.log('Hello!!!')
 
 /**
  * Declare the default tasks.
  */
 gulp.task( "default", [
   "build_js" ,
-  "build_css"
+  "build_css",
+  "watch"
 ]);
 
 
@@ -44,5 +49,16 @@ gulp.task( "build_css", function() {
     // .pipe( concat('app.css') )             // Concat all to app.css
     .pipe( rename({ extname: ".min.css" }) )  // Rename to app.min.css
     .pipe( gulp.dest( "build" ) )             // Write minified to disk
+
+});
+
+
+/**
+ * Configures which files to watch and what tasks to use on file changes.
+ */
+gulp.task( 'watch', function() {
+
+  gulp.watch( "app.js",  [ 'build_js' ] );
+  gulp.watch( "app.css", [ 'build_css' ] );
 
 });
