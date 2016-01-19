@@ -11,14 +11,13 @@
     class='modal_dialog__window'
     ng-style='vm.dimension'>
 
-    <button type="button"
+    <div
       class='modal_dialog__close'
       ng-click='vm.hideModal()'>
       X
-    </button type="button">
+    </div>
 
     <div class="container">
-
       <h2
         class='modal_dialog__title'
         ng-transclude="dialogTitle">
@@ -32,4 +31,5 @@
     </div>
 
   </section>
+
 </div>

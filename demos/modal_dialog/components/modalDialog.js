@@ -21,7 +21,13 @@
       controllerAs: "vm"
     });
 
+
+  angular
+    .module( "app" )
+    .controller( 'ModalDialogController', ModalDialogController );
+
     ModalDialogController.$inject = [ ];
+
     function ModalDialogController() {
 
       var vm = this;

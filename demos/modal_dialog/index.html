@@ -12,6 +12,7 @@
 
   <!-- Load Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha256-xWeRKjzyg6bep9D1AsHzUPEWHbWMzlRc84Z0aG+tyms= sha512-mGIRU0bcPaVjr7BceESkC37zD6sEccxE+RJyQABbbKNe83Y68+PyPM5nrE1zvbQZkSHDCJEtnAcodbhlq2/EkQ==" crossorigin="anonymous">
+  <!-- Load app styles -->
   <link rel="stylesheet" href="components/modalDialog.css">
   <style>
     h1 {
@@ -21,7 +22,6 @@
 </head>
 
 <body>
-
   <div class="container">
 
     <h1>
@@ -63,9 +63,44 @@
 
   </div><!-- /.container -->
 
-  <!-- Load scripts -->
+  <!-- Load AngularJS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular.min.js"></script>
-  <script src="app.js"></script>
+
+  <!-- Load app scripts -->
+  <script>
+  (function() {
+
+    // Module declaration.
+    angular.module( "app", [ ] );
+
+
+    // ----------------------------------------//
+    // ----------------------------------------//
+
+
+    angular
+      .module( "app" )
+      .controller( "AppController", AppController );
+
+    AppController.$inject = [];
+
+    function AppController() {
+
+      var vm = this;
+
+      // Initial state.
+      vm.isModalShown  = false;
+      vm.dialogTitle   = "This is the title";
+      vm.dialogContent = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut similique, at, iure sint laboriosam, necessitatibus nisi ea, iusto quae pariatur ducimus ullam aperiam voluptatibus incidunt eveniet nostrum expedita commodi qui!";
+
+      // Expose the public methods.
+      vm.toggleModal = function() { vm.isModalShown = ! vm.isModalShown; };
+
+    } // end AppController
+
+  })()
+  </script>
+
   <script src="components/modalDialog.js"></script>
 
 </body>
