@@ -5,8 +5,8 @@
     .module( "app", [ ] );
 
 
-  // --------------------------------------------------------------------- //
-  // --------------------------------------------------------------------- //
+  // -------------------------------------- //
+  // -------------------------------------- //
 
 
   angular
@@ -14,43 +14,18 @@
     .controller( "AppController", AppController );
 
   AppController.$inject = [
-    "$filter",
     "DemoData"
   ];
-  function AppController( $filter, DemoData ) {
-
-    vm = this;
-
-    // Initial state.
-    vm.demos    = [];
-    vm.filtered = [];
-
-    // Expose public methods.
-    vm.filterData = filterData;
+  function AppController( DemoData ) {
 
     // Load demo data.
-    vm.demos = DemoData.get();
-
-    // Assign demos to filtered.
-    vm.filtered = vm.demos;
-
-
-    /**
-     * Filter the demo data based on the specified keyword.
-     * @param  key A filter key.
-     */
-    function filterData( key ) {
-
-      var filtered = $filter( "filter" )( vm.demos, key );
-      vm.filtered  = filtered;
-
-    }
+    this.demos = DemoData.get();
 
   } // end AppController
 
 
-  // --------------------------------------------------------------------- //
-  // --------------------------------------------------------------------- //
+  // -------------------------------------- //
+  // -------------------------------------- //
 
 
   angular
@@ -63,6 +38,7 @@
 
     function get() {
 
+      // 1. Original JSON.
       var data = [
         {
           name: "binding_events",
@@ -95,12 +71,12 @@
           desc: "Taking advantage of Angular-v1.5's Multi-slot transclusion.",
         },
         {
-          name: "dynamic_tabs_using_require",
+          name: "tabs_using_require",
           type: "Angular",
           desc: "Communication between components by a child accessing its parent scope using require",
         },
         {
-          name: "dynamic_tabs_emitting_event",
+          name: "tabs_emitting_event",
           type: "Angular",
           desc: "Communication between components through events",
         },
@@ -139,12 +115,18 @@
           type: "Angular",
           desc: "Dynamically adjust the grid so that the dots are evenly distributed",
         },
+        {
+          name: "angular2-quickstart",
+          type: "Angular2",
+          desc: "My first app with Angular 2 + TypeScript",
+        },
+
       ];
 
-      // Generate urls.
+      // 2. Generate urls.
       data = extendWithUrls( data );
 
-      // Sort by name and return data.
+      // 3. Sort by name and return data.
       return data.sort( function( a, b ) { return a.name.localeCompare( b.name ); });
 
     } // end get

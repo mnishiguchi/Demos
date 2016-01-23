@@ -1,4 +1,6 @@
-# Navbar logo - absolute positioning
+# Navbar
+
+## Navbar logo - absolute positioning
 
 **advantages**
 - Can control the position precisely.
@@ -47,5 +49,25 @@
 
 .divider:before {
   content: "|";
+}
+```
+
+==
+
+## Fixing the navbar at the top
+1. Take advantage of Bootstrap's navbar-fixed-top class
+2. Adjust the margin-top property for the navbar and subsequent content
+
+```html
+<nav class="top_navbar navbar-fixed-top" role="navigation">
+```
+
+```css
+.top_navbar {
+  margin-top: 10px;
+}
+
+.page {
+  margin-top: 120px;
 }
 ```

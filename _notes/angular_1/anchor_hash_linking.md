@@ -1,4 +1,16 @@
-# Adding anchor hash linking
+# Scrolling to the top
+
+## Scrolling to the top upon route change
+- Simply add autoscroll property set to true
+- https://docs.angularjs.org/api/ngRoute/directive/ngView
+
+```html
+<ng-view autoscroll="true"></ng-view>
+```
+
+==
+
+## Adding anchor hash linking
 
 - [How to handle anchor hash linking in AngularJS](http://stackoverflow.com/questions/14712223/how-to-handle-anchor-hash-linking-in-angularjs)
 - [How to set the id attribute of a HTML element dynamically with angular js?](http://stackoverflow.com/questions/23655009/how-to-set-the-id-attribute-of-a-html-element-dynamically-with-angular-js)

@@ -65,14 +65,13 @@
         <!-- Filter -->
         <input type="text"
           ng-model="key"
-          ng-change="app.filterData( key )"
           placeholder="Filter"
           class="form-control filter_field">
 
         <!-- Table: Demos -->
         <table class="table table-bordered table-striped">
           <tbody>
-            <tr ng-repeat="demo in app.filtered">
+            <tr ng-repeat="demo in app.demos | filter:key">
               <td>
                 <a ng-href="{{ demo.demoUrl }}">
                   <b><span ng-bind="demo.name"></span></b>

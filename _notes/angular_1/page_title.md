@@ -24,8 +24,7 @@ vm.setTab = function(tab) {
 
 ```html
 <html
-  lang="en-us"
-  ng-app="mnApp"
+  ng-app="app"
   ng-controller="AppController">
 <head>
   <title>{{ title }}</title>
@@ -39,24 +38,20 @@ vm.setTab = function(tab) {
 (function() {
 
   // Module declaration.
-  var mnApp = angular.module(
-  "mnApp",
-  [
-    // Dependencies.
-  ]);
+  angular.module( "app", [] );
 
 
-  // --------------------------------------------------------------------------- //
-  // --------------------------------------------------------------------------- //
+  // -------------------------------------------------- //
+  // -------------------------------------------------- //
 
 
-  mnApp.controller(
-  "AppController",
-  function( $scope ) {
+  angular
+    .module( "app" )
+    .controller( "AppController", function( $scope ) {
 
-    $scope.title = "Masatoshi Nishiguchi";
+      $scope.title = "Masatoshi Nishiguchi";
 
-  }); // end controller
+    }); // end controller
 
 })();
 

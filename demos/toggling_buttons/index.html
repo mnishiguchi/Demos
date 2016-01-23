@@ -2,7 +2,7 @@
 
 <html
   ng-app="app"
-  ng-controller="MainController as main" >
+  ng-controller="AppController as app" >
 
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,15 +19,15 @@
     <div class="container">
 
       <header>
-        <h1>App Market</h1>
+        <h1>Toggling buttons</h1>
       </header>
 
-      <div class="main">
+      <div class="app">
         <div class="container">
 
           <div
             class="card"
-            ng-repeat="product in main.products" >
+            ng-repeat="product in app.products" >
 
             <product info="product"></product>
 

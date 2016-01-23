@@ -46,6 +46,10 @@
 
 <body>
 
+  <!-- Link to source code -->
+  <a ng-href="{{ 'https://github.com/mnishiguchi/JavaScript-Demos/tree/gh-pages' + app.pathname }}">[Code]</a>
+
+
   <div class="wrapper">
 
     <section class="hex-grid">
@@ -111,7 +115,9 @@
 
         function AppController() {
 
-          this.items = [];
+          this.pathname = window.location.pathname;
+
+          this.items    = [];
 
           // Create placeholder items.
           for ( var i = 0; i < 30; i++ ) {
