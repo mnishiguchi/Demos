@@ -6,6 +6,7 @@
 - [めんどくさいことはgulpで自動化しよう](http://qiita.com/roana0229/items/1fcf301b7c5f2f2ede0e)
 - https://github.com/roana0229/gulp-template-web/blob/master/gulpfile.js
 - [Automate Your Tasks Easily with Gulp.js](https://scotch.io/tutorials/automate-your-tasks-easily-with-gulp-js)
+- [gulp + coffeescriptでお気楽フロント開発環境構築](http://qiita.com/ino-shin/items/9b5dd7c08d9a31cb773d)
 
 ```
 "sass/style.scss"
