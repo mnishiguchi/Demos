@@ -36,23 +36,17 @@
       class="modal_dialog__overlay"
       ng-switch="dialogType">
 
-      <!-- BEGIN: Alert Modal. -->
       <div ng-switch-when="alert">
-        <span ng-include="'components/_alertModal.html'"></span>
+        <alert-dialog></alert-dialog>
       </div>
-      <!-- END: Alert Modal. -->
 
-      <!-- BEGIN: Confirm Modal. -->
       <div ng-switch-when="confirm">
-        <span ng-include="'components/_confirmModal.html'"></span>
+        <confirm-dialog></confirm-dialog>
       </div>
-      <!-- END: Confirm Modal. -->
 
-      <!-- BEGIN: Prompt Modal. -->
       <div ng-switch-when="prompt">
-        <span ng-include="'components/_promptModal.html'"></span>
+        <prompt-dialog></prompt-dialog>
       </div>
-      <!-- END: Prompt Modal. -->
 
     </modal-dialog>
 
@@ -65,6 +59,9 @@
   <script src="app.js"></script>
   <script src="components/modalDialog.js"></script>
   <script src="components/modalService.js"></script>
+  <script src="components/_alertDialog.js"></script>
+  <script src="components/_confirmDialog.js"></script>
+  <script src="components/_promptDialog.js"></script>
 
 </body>
 </html>

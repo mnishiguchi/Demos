@@ -1,53 +1,57 @@
 ( function() {
 
   // Module declaration.
-  var app = angular.module( "app", [ ] );
+  angular.module( "app", [ ] );
 
 
   // --------------------------------------------------------------------------- //
   // --------------------------------------------------------------------------- //
 
 
-  app.controller( 'MainController', MainController );
+  angular
+    .module( "app" )
+    .controller( 'AppController', AppController );
 
-  MainController.$inject = [ ];
-  function MainController() {
+  AppController.$inject = [ ];
+  function AppController() {
 
     this.products = [
       {
-        icon: 'http://placehold.it/200x400/ff7f00',
+        icon: 'http://placehold.it/300/ff7f00?text=A',
         title: 'Orange',
         developer: 'Mikan',
         price: 0.99
       },
       {
-        icon: 'http://placehold.it/200x400/C6E2FF',
+        icon: 'http://placehold.it/300/C6E2FF?text=B',
         title: 'Sky',
         developer: 'Sora',
         price: 2.99
       },
       {
-        icon: 'http://placehold.it/200x400/123456',
+        icon: 'http://placehold.it/300/123456?text=C',
         title: 'Midnight',
         developer: 'Mayonaka',
         price: 1.99
       },
       {
-        icon: 'http://placehold.it/200x400/00EE00',
+        icon: 'http://placehold.it/300/00EE00?text=D',
         title: 'Green',
         developer: 'Midori',
         price: 1.99
       }
     ];
 
-  }; // end MainController
+  }; // end AppController
 
 
   // --------------------------------------------------------------------------- //
   // --------------------------------------------------------------------------- //
 
 
-  app.component( 'product', {
+  angular
+    .module( "app" )
+    .component( 'product', {
 
       bindings: {
         info: '='
@@ -69,7 +73,9 @@
   /**
    * An interactive directive, using link function.
    */
-  app.directive( 'installButton', function() {
+  angular
+    .module( "app" )
+    .directive( 'installButton', function() {
     return {
       restrict: 'E',
       scope:    {},
@@ -120,7 +126,9 @@
   /**
    * An interactive directive, using controller.
    */
-  app.component( 'helloButton', {
+  angular
+    .module( "app" )
+    .component( 'helloButton', {
 
     bindings: {
 
@@ -133,7 +141,9 @@
     controller: HelloButtonController,
   });
 
-  app.controller( 'HelloButtonController', HelloButtonController );
+  angular
+    .module( "app" )
+    .controller( 'HelloButtonController', HelloButtonController );
 
   HelloButtonController.$inject = [
     "$element"

@@ -1,0 +1,22 @@
+<form
+  ng-submit="promptDialog.submit()"
+  class="modal_dialog__window" >
+
+  <p>{{ promptDialog.message }}</p>
+
+  <p ng-if="promptDialog.errorMessage">
+    <strong>Sorry:</strong>
+    <span>{{ promptDialog.errorMessage }}</span>
+  </p>
+
+  <p>
+    <input type="text" ng-model="promptDialog.form.input" />
+  </p>
+
+  <p>
+    <a ng-click="promptDialog.submit()">Submit</a>
+    &mdash;
+    <a ng-click="promptDialog.cancel()">Cancel</a>
+  </p>
+
+</form>

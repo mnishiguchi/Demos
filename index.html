@@ -21,17 +21,7 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
   <!-- Custom styles -->
-  <link rel="stylesheet" href="main.css">
-
-  <!-- Load jQuery first, then Bootstrap JS. -->
-  <script src="node_modules/jquery/dist/jquery.min.js"></script>
-  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-  <!-- Load lodash -->
-  <script src="node_modules/lodash/index.js"></script>
-  <!-- Load Angular -->
-  <script src="node_modules/angular/angular.min.js"></script>
-  <!-- Load app's sctipts -->
-  <script src="main.js"></script>
+  <link rel="stylesheet" href="build/app.min.css">
 </head>
 
 <body>
@@ -75,14 +65,13 @@
         <!-- Filter -->
         <input type="text"
           ng-model="key"
-          ng-change="app.filterData( key )"
           placeholder="Filter"
           class="form-control filter_field">
 
         <!-- Table: Demos -->
         <table class="table table-bordered table-striped">
           <tbody>
-            <tr ng-repeat="demo in app.filtered track by $index">
+            <tr ng-repeat="demo in app.demos | filter:key">
               <td>
                 <a ng-href="{{ demo.demoUrl }}">
                   <b><span ng-bind="demo.name"></span></b>
@@ -92,7 +81,7 @@
               <td ng-bind="demo.desc"></td>
               <td>
                 <a ng-href="{{ demo.githubUrl }}">
-                  <i class="fa fa-github-alt"></i>
+                  <i class="fa fa-github"></i>
                 </a>
               </td>
             </tr>
@@ -125,5 +114,30 @@
     </footer>
 
   </div> <!-- /container -->
+
+
+  <!-- Load jQuery first, then Bootstrap JS. -->
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- Load lodash -->
+  <script src="node_modules/lodash/index.js"></script>
+  <!-- Load Angular -->
+  <script src="node_modules/angular/angular.min.js"></script>
+  <!-- Load app's sctipts -->
+  <script src="build/app.min.js"></script>
+
+  <script>
+    /**
+     * Get icons blinking.
+     */
+    $(document).ready( function() {
+
+      // Blinking eyes
+      setInterval(function() {
+        $('.flashing').fadeOut(1000).fadeIn(1000);
+      }, 2000);
+
+    });
+  </script>
 </body>
 </html>

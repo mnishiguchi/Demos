@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 
-<html ng-app="app">
+<html
+  ng-app="app"
+  ng-controller="AppController as app">
 
   <head>
     <meta charset="utf-8">
@@ -37,6 +39,9 @@
   <body>
     <div class="container">
 
+      <!-- Link to source code -->
+      <a ng-href="{{ 'https://github.com/mnishiguchi/JavaScript-Demos/tree/gh-pages' + app.pathname }}">[Code]</a>
+
       <h1>Binding events</h1>
 
       <section
@@ -53,11 +58,28 @@
       (function() {
 
         // Module declaraton.
-        var app = angular.module( "app", [ ] );
+        angular.module( "app", [] );
 
 
-        // --------------------------------------------------------------------- //
-        // --------------------------------------------------------------------- //
+        // -------------------------------------- //
+        // -------------------------------------- //
+
+
+        angular
+          .module( "app" )
+          .controller( "AppController", AppController );
+
+          AppController.$inject = [];
+
+          function AppController() {
+
+            this.pathname = window.location.pathname;
+
+          }
+
+
+        // -------------------------------------- //
+        // -------------------------------------- //
 
 
         // NOTE: Directives need not return a configuration object if we only use:
@@ -67,39 +89,43 @@
         /**
          * Respond to mouseenter event.
          */
-        app.directive( "respondToMouseenter", respondToMouseenter );
+        angular
+          .module( "app" )
+          .directive( "respondToMouseenter", respondToMouseenter );
 
-        function respondToMouseenter() {
+          function respondToMouseenter() {
 
-          return link;
+            return link;
 
-          function link( scope, element ) {
-            element.bind( "mouseenter", function() {
+            function link( scope, element ) {
+              element.bind( "mouseenter", function() {
 
-              element.children( ':first' ).html( "Welcome!" );
-              element.css( "background-color", "#ff70ca" );
-            })
+                element.children( ':first' ).html( "Welcome!" );
+                element.css( "background-color", "#ff70ca" );
+              })
+            }
           }
-        }
 
 
         /**
          * Respond to mouseleave event.
          */
-        app.directive( "respondToMouseleave", respondToMouseleave );
+        angular
+          .module( "app" )
+          .directive( "respondToMouseleave", respondToMouseleave );
 
-        function respondToMouseleave() {
+          function respondToMouseleave() {
 
-          return link;
+            return link;
 
-          function link( scope, element ) {
-            element.bind( "mouseleave", function() {
+            function link( scope, element ) {
+              element.bind( "mouseleave", function() {
 
-              element.children( ':first' ).html( "Good-bye!" );
-              element.css( "background-color", "#caff70" );
-            })
+                element.children( ':first' ).html( "Good-bye!" );
+                element.css( "background-color", "#caff70" );
+              })
+            }
           }
-        }
 
       })()
 
