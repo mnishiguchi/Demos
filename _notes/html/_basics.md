@@ -5,34 +5,38 @@
 - [Best Online WYSIWYG HTML Editor](http://bestonlinehtmleditor.com/)
 - [The World Wide Web Consortium](W3C.org)
 - [Markup validatior](http://validator.w3.org/)
-- [Bad design examples](wepagesthatsuck.com)
-- [wayback machine](http://archive.org/web/) - to look up old websites
-- [backlink watch](http://backlinkwatch.com/) - to see a website’s incoming links
+
+==
+ 
+## Displaying non-ASCII characters (Unicode)
+- e.g., ™, ®, £, [Geometric Shapes](https://en.m.wikipedia.org/wiki/Geometric_Shapes), etc.
+- Use a tag called meta to tell browsers to use a character set (charset) called `UTF-8`
+
+```html
+<meta charset="utf-8">
+```
+
 
 ==
 
-## Character encoding (& code)
-- Special characters
-- HTML Entities and/or ISO Latin-1 codes can be placed in source code like any other alphanumeric characters to produce special characters and symbols that cannot be generated in HTML with normal keyboard commands.
+## Displaying special characters (& code)
+- Two ways:
+    + HTML Entities and/or
+    + ISO Latin-1 codes
 - https://www.utexas.edu/learn/html/spchar.html
 - http://www.degraeve.com/reference/specialcharacters.php
 - http://www.ascii.cl/htmlcodes.htm
 
 ```
-using name:   &trade;
-using number: &#8482;
+# Copyright(©)
+- HTML Entities: &copy;
+- ISO Latin-1:   &#169;
 ```
 
 ==
 
 ## HTML URL Encoding (% code)
 - [HTML URL Encoding Reference ](http://www.w3schools.com/tags/ref_urlencode.asp)
-
-==
-
-## Unicode
-- e.g., Geometric Shapes
-- https://en.m.wikipedia.org/wiki/Geometric_Shapes
 
 ==
 
@@ -140,43 +144,12 @@ http://searchsoa.techtarget.com/definition/SGML
 
 ## Some HTML tags
 
-### Telling the browsers we are using HTML5
-```html
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <!--some boilerplate (meta info)-->
-        <meta charset="UTF-8">
-        <title>Document</title>
-    </head>
-
-    <body>
-        <!--content-->
-    </body>
-</html>
-```
-
-==
-
 ### Sementic tags
 - article
 - nav
 - header
 - footer
 - Compare to: div that is non-semantic and multi-purpose
-
-==
-
-### Navigation list
-
-```html
-<nav>
-    <ul>
-        <li></li>
-        <li></li>
-    </ul>
-</nav>
-```
 
 ==
 
@@ -205,20 +178,6 @@ http://searchsoa.techtarget.com/definition/SGML
     <figcaption>caption</figcaption>
 </figure>
 ```
-
-==
-
-### One-sided tags
-- E.g. `<br />`, `<hr>`, etc
-
-==
-
-### Meta
-- `<meta name="..." content="...">`
-- provides metadata about the HTML document.
-    + keywords for search engines
-    + etc
-- http://www.w3schools.com/tags/tag_meta.asp
 
 ==
 
