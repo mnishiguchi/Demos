@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Two Columns, Fluid</title>
+
+  <style type="text/css">
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+    /* Typography */
+
+    p, ul {
+      margin: 15px 0;
+    }
+    ul {
+      margin-left: 15px;
+    }
+    #header, #main, #extras, #footer {
+      padding: 20px;
+    }
+    #header {
+      background-color: #ccc;
+    }
+    #main {
+      background-color: #900;
+    }
+    #extras {
+      background-color: #06f;
+    }
+    #footer {
+      background-color: #ccc;
+    }
+
+    /* Layout Styles */
+
+    .wrapper {
+      width: 960px;
+      margin: 0 auto;
+    }
+    #main {
+      float: left;
+      width: 650px;
+      margin: 0 20px;
+    }
+    #extras {
+      float: left;
+      width: 250px;
+      margin: 0 20px 0 0;
+    }
+    #footer {
+      clear: left;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="wrapper">
+
+    <div id="header">
+      <h1>Two Columns, Fluid</h1>
+      <p>These experiments are fun!</p>
+    </div>
+
+    <div id="main">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit aliquid numquam reiciendis perferendis odit iure dolores distinctio quas nesciunt, voluptatem, repellendus corrupti culpa consequatur est amet molestias accusamus! Officiis, excepturi.</p>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae provident consequuntur pariatur dignissimos nesciunt voluptatibus. Recusandae quibusdam fugiat, aspernatur blanditiis veniam debitis ut ea, reiciendis atque. Aliquid ratione mollitia numquam!</p>
+    </div>
+
+    <div id="extras">
+      <ul>
+        <li>unagi</li>
+        <li>donburi</li>
+        <li>sakana</li>
+        <li>manju</li>
+        <li>kohi</li>
+        <li>ocha</li>
+      </ul>
+    </div>
+
+    <div id="footer">
+      <p>
+        &copy; 2016 Masatoshi Nishiguchi &amp; friends.
+      </p>
+    </div>
+
+  </div><!-- /.wrapper -->
+
+</body>
+</html>

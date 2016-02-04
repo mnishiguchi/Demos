@@ -1,5 +1,10 @@
 # Aniation
 
+## Libraries
+- [GreenSock | GSAP](http://greensock.com/gsap)
+
+==
+
 ## Keyframes
 - Two parts
     1. Define
@@ -110,3 +115,4 @@
     }
 
 ```
+

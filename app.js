@@ -38,7 +38,7 @@
 
     function get() {
 
-      // 1. Original JSON.
+      // 1. A list of items to be displayed in the table.
       var data = [
         {
           name: "binding_events",
@@ -119,6 +119,11 @@
           name: "angular2-quickstart",
           type: "Angular2",
           desc: "My first app with Angular 2 + TypeScript",
+        },
+        {
+          name: "layout_experiments",
+          type: "CSS",
+          desc: "percentage width, positioning",
         },
 
       ];

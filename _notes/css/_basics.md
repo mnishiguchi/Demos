@@ -17,6 +17,20 @@
 
 ==
 
+## Good practice to add @charset at the beginning of CSS
+- The @charset CSS at-rule specifies the character encoding used in the style sheet.
+- https://developer.mozilla.org/en-US/docs/Web/CSS/@charset
+
+```css
+/* Set the encoding of the style sheet to Unicode UTF-8 */
+@charset "UTF-8";  
+
+/* Set the encoding of the style sheet to Latin-9 (Western European languages, with euro sign) */
+@charset 'iso-8859-15'; 
+```
+
+==
+
 ## Defining a styling rule
 
 ### User-defined styles

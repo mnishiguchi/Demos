@@ -15,7 +15,7 @@
 ### INLINE
 - **no line breaks**
 - Only takes up as much of the screen as need
-- Align by 'float'
+- Align by `float`
 - like Android's wrap_content
 ```
     + <a>

@@ -1,0 +1,39 @@
+<html>
+
+  <head>
+    <title>Angular 2 QuickStart</title>
+
+    <!-- 1. Load libraries -->
+    <!-- IE required polyfills, in this exact order -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.34.2/es6-shim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.17/system-polyfills.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/2.0.0-beta.1/angular2-polyfills.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.17/system.src.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/2.0.0-beta.1/Rx.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/2.0.0-beta.1/angular2.dev.js"></script>
+
+    <!-- 2. Configure SystemJS -->
+    <script>
+      System
+        .config({
+          packages: {
+            app: {
+              format:           'register',
+              defaultExtension: 'js'
+            }
+          }
+        });
+      System
+        .import('app/boot')
+        .then( null, console.error.bind( console ) );
+    </script>
+
+  </head>
+
+  <!-- 3. Display the application -->
+  <body>
+    <my-app>Loading...</my-app>
+  </body>
+
+</html>
