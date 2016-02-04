@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Two Columns, Fluid</title>
+
+  <style type="text/css">
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      border: 1px dotted red;
+    }
+
+    body {
+      min-height: 1000px;
+    }
+
+    /* Typography */
+
+    p, ul {
+      margin: 15px 0;
+    }
+    ul {
+      margin-left: 15px;
+    }
+    #header, #main, #extras, #links, #footer {
+      padding: 20px;
+    }
+    #header {
+      background-color: #ccc;
+    }
+    #extras,
+    #links,
+    #main {
+      background-color: #9e9;
+    }
+    #footer {
+      background-color: #ccc;
+    }
+
+    /* Layout Styles */
+
+    #links {
+      float: left;
+      width: 15%;
+      margin-left: 5%;
+    }
+    #main {
+      float: left;
+      width: 50%;
+      margin: 0 5%;
+    }
+    #extras {
+      float: left;
+      width: 15%;
+      margin-right: 5%;
+    }
+    #footer {
+      clear: left;
+    }
+
+
+    /*
+      Experiments for positioning
+     */
+
+
+    #special-span-relative,
+    #special-span-absolute,
+    #special-span-fixed {
+      color: red;
+      font-size: 3.0em;
+    }
+
+
+    /* == Relative positioning ==
+      - Move from the original location
+      - The space it would occupy normally, is preserved.
+    */
+    #special-span-relative {
+      position: relative;
+      top: 37px;
+    }
+
+    /* == Absolute positioning ==
+      - Position relative to the closest parent that has positioning, other than
+      default static.
+      - If no ancestor elments are explicitly positioned, the absolute positioning
+       will be applied to the HTML tag.
+      - The normal positioning flow no longer exists.
+      - Usage: Positioning on top of other elements, animation;
+    */
+
+    #special-span-absolute {
+      position: absolute;
+      top: 37px;
+    }
+
+    /*
+      == Fixed positioning ==
+      - The element will be positioned relative to the viewport and stay there
+      even if the page is scrolled.
+      - Used for fixed navigations
+      - iOS does not fully support this.
+     */
+    #special-span-fixed {
+      position: fixed;
+      top: 37px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="wrapper">
+
+    <div id="header">
+      <h1>Two Columns, Fluid</h1>
+      <p>These <span id="special-span">experiments</span> are fun!</p>
+    </div>
+
+    <div id="links">
+      <ul>
+        <li>takoyaki</li>
+        <li>okonomiyaki</li>
+        <li>gyuudon</li>
+        <li>sashimi</li>
+        <li>maguro</li>
+        <li>sushi</li>
+      </ul>
+    </div>
+
+    <div id="main">
+      <p><span id="special-span-relative">Relative positioning</span>: Sit aliquid numquam reiciendis perferendis odit iure dolores distinctio quas nesciunt, voluptatem, repellendus corrupti culpa consequatur est amet molestias accusamus! Officiis, excepturi.</p>
+      <p><span id="special-span-absolute">Absolute positioning</span>: Sit aliquid numquam reiciendis perferendis odit iure dolores distinctio quas nesciunt, voluptatem, repellendus corrupti culpa consequatur est amet molestias accusamus! Officiis, excepturi.</p>
+      <p><span id="special-span-fixed">Fixed positioning</span>: Recusandae provident consequuntur pariatur dignissimos nesciunt voluptatibus. Recusandae quibusdam fugiat, aspernatur blanditiis veniam debitis ut ea, reiciendis atque. Aliquid ratione mollitia numquam!</p>
+    </div>
+
+    <div id="extras">
+      <ul>
+        <li>unagi</li>
+        <li>donburi</li>
+        <li>sakana</li>
+        <li>manju</li>
+        <li>kohi</li>
+        <li>ocha</li>
+      </ul>
+    </div>
+
+
+    <div id="footer">
+      <p>
+        &copy; 2016 Masatoshi Nishiguchi &amp; friends.
+      </p>
+    </div>
+
+  </div><!-- /.wrapper -->
+
+</body>
+</html>

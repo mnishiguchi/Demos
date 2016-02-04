@@ -120,6 +120,11 @@
           type: "Angular2",
           desc: "My first app with Angular 2 + TypeScript",
         },
+        {
+          name: "layout_experiments",
+          type: "CSS",
+          desc: "percentage width, positioning",
+        },
 
       ];
 

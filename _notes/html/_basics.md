@@ -16,6 +16,15 @@
 <meta charset="utf-8">
 ```
 
+### `<meta charset="utf-8">` vs `<meta http-equiv="Content-Type">`
+
+- http://stackoverflow.com/questions/4696499/meta-charset-utf-8-vs-meta-http-equiv-content-type
+- In HTML5, they are equivalent. Use `<meta charset="UTF-8">`
+
+**Longer form**
+```
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+```
 
 ==
 
