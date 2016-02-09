@@ -123,9 +123,18 @@
         {
           name: "layout_experiments",
           type: "CSS",
-          desc: "percentage width, positioning",
+          desc: "Responsive design",
         },
-
+        {
+          name: "jumbotron",
+          type: "CSS",
+          desc: "Responsive design",
+        },
+        {
+          name: "mobile_first_design",
+          type: "CSS",
+          desc: "Responsive design",
+        },
       ];
 
       // 2. Generate urls.
