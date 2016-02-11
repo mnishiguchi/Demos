@@ -1,54 +1,28 @@
+# Detecting current screen size
+
+```css
+console.info( $window.innerWidth );
+console.info( $window.innerHeight );
+```
+
 ```js
-/**
- * breakpointSetter
- *
- * When the screen resizes, I check if it is large.
- * NOTE: Do nothing until resizing occurs.
- *
- *  USAGE
- *  1. Inject this to the app module.
- *
- *  2.
- *  <div
- *    breakpoint-setter
- *    ng-show="isLarge">
- *    ...
- *  </div>
- */
-(function() {
-
-  // Module declaration.
-  var module = angular.module(
-  "breakpointSetter",
-  []);
-
-
-  // --------------------------------------------------------------------------- //
-  // --------------------------------------------------------------------------- //
-
-
-  module.directive(
-  'breakpointSetter',
-  function( $window ) {
-
-    // The range of medium size.
-    var breakpoint_upper = 770;
-    var breakpoint_lower = 320;
-
-    return function(scope, elem, attrs) {
-
-      // Listen for window resizing.
+      // Keep watch on window resizing.
       angular.element( $window ).on('resize', function() {
 
-        // Update the isLarge variable.
-        scope.$apply(function()  {
-          var screenWidth    = $window.innerWidth;
-          scope.isLarge      = (screenWidth > breakpoint_upper) ? true : false;
-          scope.isExtraSmall = (screenWidth < breakpoint_lower) ? true : false;
-        })
-      });
-    }; // end return
-  }); // end directive
+        // Update the state of the navbar
+        $scope.$apply( function() { handleResizing(); } );
 
-})();
+      });
+```
+
+```js
+      /**
+       * Sets the state of the navbar according to the current screen width.
+       */
+      function handleResizing() {
+
+        vm.isMobile    = ( $window.innerWidth < breakpoint ) ? true : false;
+        vm.isShownMenu = ( vm.isMobile ) ? false : true;
+
+      }
 ```

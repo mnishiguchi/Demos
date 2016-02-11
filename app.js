@@ -116,11 +116,6 @@
           desc: "Dynamically adjust the grid so that the dots are evenly distributed",
         },
         {
-          name: "angular2-quickstart",
-          type: "Angular2",
-          desc: "My first app with Angular 2 + TypeScript",
-        },
-        {
           name: "layout_experiments",
           type: "CSS",
           desc: "Responsive design",

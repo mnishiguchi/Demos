@@ -136,3 +136,29 @@
 - https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix
 
 ==
+
+## Clearfix
+- When elements are floating, the DOM consider that they do not have height.
+- Good idea to apply the clearfix technique after the end of the last floating element. 
+
+```css
+.clearfix {
+  clear: both;
+}
+```
+
+==
+
+## Font pairs
+
+- http://briangardner.com/google-font-combinations/
+- http://femmebot.github.io/google-type/
+- http://fontpair.co/
+
+==
+
+## Color swatches
+
+- http://colorswatches.info/
+
+==
